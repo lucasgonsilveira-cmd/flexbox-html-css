@@ -1,0 +1,334 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Orbitron", sans-serif;
+} /*Aplicando algumas regras para todos elementos*/
+
+main{
+    padding-top: 140px;
+    background-color: #000000;
+}
+
+html{
+    scroll-behavior: smooth;
+}/*Definindo uma rolagem de pag mais suave*/
+
+body{
+    background-color: #2e0a81;
+    height: 100vh;
+}
+
+.header-area{
+    max-width: 1280px;
+    margin: 0 auto;
+}/*Definir o tamanho total do container header*/
+
+header{
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 40px 4%;
+    background-color: #010413;
+    height: 150px;
+} /*Manter o cabeçalho no topo da pagina ao rolar, index controla qual elemento fica na frente do outro, adiciona espaço interno padding, altura 150px*/
+
+
+/*----Aqui ativo o DISPLAY FLEX no cabeçalho / os elementos ficaram lado a lado---*/
+header > .header-area{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-left img{
+    width: 200px;
+    height: 100px;
+    margin-top: left;
+    padding: 5px 5px;
+    transition: transform 0.3s ease;
+}/*configurando a posição do logo para esquerda*/
+
+.logo-left img:hover{
+    transform:translateY(-10px);
+}/*Quando o cursor passar pela img ele aumenta 10px, dando um efeito*/
+
+header nav{
+    color: #5e5e5e !important; /* O !important garante a cor inicial */
+    text-decoration: none;
+    flex-direction: row;
+    transition: all 0.3s ease;
+    flex: 1;
+    margin: 15px;
+    text-align: center;
+}
+
+header nav:hover {
+    transform: scale(1.05);
+}
+
+.container-inicio{
+    display: flex; /*Alinhar dois blocos lateralmente*0*/
+    align-items: center;
+    justify-content: center;
+    gap: 80px; /*Espaço entre foto e texto*/
+    padding: 50px;
+    max-width: 1200px;
+    margin:0 auto;
+
+}
+
+.foto-perfil {
+    flex-shrink: 0;
+}/* Impede que a foto diminua */
+
+.foto-perfil img {
+    width: 200px; 
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+} /* Definindo um tamanho fixo para a foto, deixando ela arredondada*/
+
+.quem-sou-eu {
+    max-width: 600px;
+    text-align: justify;  
+}
+
+.quem-sou-eu h1 {
+    font-size: 40px;
+    font-family: "Orbitron";
+    color: #48eb20;
+    margin-bottom: 20px;
+}
+
+.quem-sou-eu p{
+    color: #48eb20;
+}
+
+/*----Ativo novamente flexbox para dividir os elemntos do container*/
+.experiencia{
+    display: flex;
+    align-items: center; /* Alinha verticalmente ao centro */
+    justify-content: space-between; /* Empurra um para cada lado */
+    gap: 50px;
+    padding: 50px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.linha-horizontal{
+    background-color: #48eb20;;
+}
+
+.texto-exp{
+    flex: 1;
+}
+
+.texto-exp h1{
+    margin-bottom: 20px;
+    color: #48eb20;
+}
+
+.texto-exp ul{
+
+    list-style: none; /*Tirando os estilos da lista*/
+    padding: 0;
+    color: #48eb20;
+}
+
+.texto-exp li{
+    margin-bottom: 5px;
+}
+
+.carton-picture{
+    flex-shrink: 0;
+}
+
+.carton-picture img{
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 30px;
+}
+
+.academica{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 50px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.formacao-acad{
+    flex: 1;
+}
+
+.formacao-acad h3{
+    margin-bottom: 20px;
+    color: #48eb20;
+}
+
+.formacao-acad ul{
+    list-style:none;
+    padding: 0;
+    color:#48eb20;
+}
+
+.formacao-acad li{
+    margin-bottom: 15px;
+}
+
+.cartoon-formatura{
+    flex-shrink: 0;;
+}
+
+.cartoon-formatura img{
+    width: 250px; 
+    height: 250px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+footer{
+    width: 100%;
+    background-color: #010413;
+    padding: 60px 8%;
+    color: #48eb20;
+}
+
+.footer-content{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-info h1{
+    margin-bottom: 15px;
+    color: #5734f3 !important;
+}
+
+.footer-info p{
+    margin: 5px 0;
+}
+
+.social-media{
+    display: flex;
+    gap: 15px;
+}
+
+.footer-link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #5e5e5e !important;
+    background-color: #11152c;
+    border-radius: 12px;
+    text-decoration: none;
+}
+
+#git-hub:hover{
+    background-color: #333;
+    border-color: #6e5494;
+}
+
+#linkedin:hover{
+    background-color: #0077b5;
+    border-color: #00a0dc;
+}
+
+.download-curriculo{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+
+/* ===== Responsividade para celulares ===== */
+@media screen and (max-width: 768px) {
+
+    /* Header */
+    header {
+        height: auto;
+        padding: 20px;
+    }
+
+    header > .header-area {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .logo-left img {
+        width: 150px;
+        height: auto;
+    }
+
+    header nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    /* Seção inicial */
+    .container-inicio {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+        padding: 15px;
+    }
+
+    .foto-perfil img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .quem-sou-eu {
+        max-width: 100%;
+    }
+
+    .quem-sou-eu h1 {
+        font-size: 2rem;
+    }
+
+    /* Experiência */
+    .experiencia {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .carton-picture img {
+        width: 200px;
+        height: auto;
+    }
+
+    /* Formação */
+    .academica {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .cartoon-formatura img {
+        width: 200px;
+        height: auto;
+    }
+
+    /* Footer */
+    footer {
+        text-align: center;
+    }
+
+    .social-media {
+        justify-content: center;
+        margin: 15px 0;
+    }
+
+    .download-curriculo {
+        align-items: center;
+    }
+}
